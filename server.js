@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 const mongoURI = 'mongodb://localhost:27017/'+'Animals';
 // const session = require('express-session');
 mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{

@@ -43,11 +43,25 @@ router.get('/:id', async (req, res) =>{
 })
 
 // EDIT ROUTE
-router.get('/:id/edit', (req, res)=>{
-    res.render('./cats/edit.ejs')
+router.get('/:id/edit', async (req, res)=>{
+    const cat = await Cats.findById(req.params.id);
+    res.render('./cats/edit.ejs', {
+        catId : req.params.id,
+        cat : cat
+    })
 })
 // UPDATE ROUTE
-
+router.put('/:id', async (req, res) =>{
+    try{
+        const cats = await Cats.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        console.log(cats);
+        res.redirect('/cats');
+    }catch(err){
+        res.send(err)
+        console.log(cat)
+        console.log(err)
+    }
+})
 // DELETE ROUTE
 
 module.exports = router;

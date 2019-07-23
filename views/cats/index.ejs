@@ -14,11 +14,11 @@
         <li>
         <a href="/cats/<%= cat._id %>"><%=cat.name%></a>
         </li>
-        <form action="/cats/<%cat._id%>/edit">
+        <form action="/cats/<%= cat._id %>/edit">
         <input type="submit" value="UPDATE">
         </form>
 
-        <form action="/cats/<%cat._id%>?_method=DELETE" method="POST">
+        <form action="/cats/<%= cat._id%>?_method=DELETE" method="POST">
         <input type="submit" value="delete">
         </form>
     <%})%>
