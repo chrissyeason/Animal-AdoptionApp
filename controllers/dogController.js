@@ -23,3 +23,5 @@ router.get("/", (req,res)=>{
 // UPDATE ROUTE
 
 // DELETE ROUTE
+
+module.exports = router;
