@@ -63,5 +63,9 @@ router.put('/:id', async (req, res) =>{
     }
 })
 // DELETE ROUTE
+router.delete('/:id', async (req, res) =>{
+    const cat = await Cats.findByIdAndDelete(req.params.id);
+    res.redirect('/cats');
+})
 
 module.exports = router;
