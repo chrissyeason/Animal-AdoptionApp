@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // }))
 
 app.get('/', (req, res) =>{
-    res.send("we working!!!")
+    // res.send("we working!!!")
+    res.render('dogs/index.ejs');
 })
 const mongoURI = 'mongodb://localhost:27017/'+'animals';
 
