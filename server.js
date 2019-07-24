@@ -1,13 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
+const mongoURI = 'mongodb://localhost:27017/'+'Animals';
+// const session = require('express-session');
+mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
+    console.log("the connection with mongodb is established")
+});
+const catController = require('./controllers/catController');
 
+// MIDDLEWARE
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/cats', catController);
 
-// const session = require('express-session');
 
 // app.use(session({
 //     secret: "SecretStuff",
@@ -17,9 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) =>{
     // res.send("we working!!!")
-    res.render('dogs/index.ejs');
+    res.render('index.ejs');
 })
-const mongoURI = 'mongodb://localhost:27017/'+'animals';
+
 
 app.listen(3000,()=>{
     console.log("The animal App is ready!!!");
