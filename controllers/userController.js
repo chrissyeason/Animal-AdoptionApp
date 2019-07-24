@@ -20,12 +20,14 @@ router.get('/landing', (req, res)=>{
 // create new user route
 router.post('/', async (req, res) =>{
     try{
-        const salt = bycrypt.genSaltSync();
-        req.body.password = bycrypt.hashSync(req.body.password, salt);
+        const salt = bcrypt.genSaltSync();
+        console.log(req.body)
+        req.body.password = bcrypt.hashSync(req.body.password, salt);
         const newUser = await User.create(req.body);
         req.session.userId = newUser._id;
         res.redirect('/landing');
     }catch(err){
+        console.log(err)
         res.send(err)
     }
 })
@@ -43,7 +45,7 @@ router.post("/login", async (req, res)=>{
 
         if(passwordIsValid){
                 req.session.userId = userFromDb._id;
-                res.redirect('/landing')
+                res.redirect('user/landing')
                 console.log(userFromDb)
             }else{
                 res.send("not valid password")
