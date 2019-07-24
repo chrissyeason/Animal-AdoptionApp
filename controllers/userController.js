@@ -43,7 +43,7 @@ router.post("/login", async (req, res)=>{
 
         if(passwordIsValid){
                 req.session.userId = userFromDb._id;
-                res.redirect('/albums')
+                res.redirect('/landing')
                 console.log(userFromDb)
             }else{
                 res.send("not valid password")
