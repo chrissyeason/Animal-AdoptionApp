@@ -10,7 +10,7 @@
     <h1>Your cats will be shown here</h1>
     <a href="/cats/new">add a new cat</a>
 <ul>
-    <% cats.forEach(function(cat, index) {%>
+    <% cats.forEach(function(cat) {%>
         <li>
         <a href="/cats/<%= cat._id %>"><%=cat.name%></a>
         </li>
