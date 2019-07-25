@@ -19,13 +19,14 @@ app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userController);
 app.use('/cats', catController);
+app.use('/dogs', dogController);
 
 
 app.get('/', (req, res) =>{
     res.render('index.ejs');
 })
 
-app.get('/', (req, res) =>{
+app.get('/landing', (req, res) =>{
     res.render('landing.ejs');
 })
 
