@@ -30,6 +30,6 @@ app.get('/landing', (req, res)=>{
     res.render('landing.ejs')
 })
 
-app.listen(3000,()=>{
+app.listen(3000, ()=>{
     console.log("The animal App is ready!!!");
 })
