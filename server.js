@@ -3,27 +3,34 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-
+const mongoURI = 'mongodb://localhost:27017/'+'DogsAndCats';
+const userController = require('./controllers/userController.js')
+const catController = require('./controllers/catController.js')
+const dogController = require('./controllers/dogController.js')
+const session = require('express-session');
+mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
+    console.log("the connection with mongodb is established")
+ });
+ app.use(session({
+    secret: "SecretStuff",
+    resave:false,
+    saveUninitialized:false
+}))
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
-const dogController = require("./controllers/dogController.js")
-app.use("/dogs",dogController)
-
-// const session = require('express-session');
-
-// app.use(session({
-//     secret: "SecretStuff",
-//     resave:false,
-//     saveUninitialized:false
-// }))
+app.use("/user", userController);
+app.use('/cats', catController);
+app.use('/dogs', dogController);
 
 app.get('/', (req, res) =>{
-    // res.send("we working!!!")
     res.render('index.ejs');
 })
-const mongoURI = 'mongodb://localhost:27017/'+'animals';
 
-app.listen(3000,()=>{
+app.get('/landing', (req, res)=>{
+    res.render('landing.ejs')
+})
+
+app.listen(3000, ()=>{
     console.log("The animal App is ready!!!");
 })
 
