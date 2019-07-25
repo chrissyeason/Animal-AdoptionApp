@@ -1,25 +1,88 @@
 const express = require("express");
 const router = express.Router();
 
-const Dog = require("../models/dogs");
+const Dog = require("../models/dogs.js");
 
 //INDEX ROUTE
-router.get("/", (req,res)=>{
+router.get("/", async(req,res)=>{
+    try{
+        const allDogs = await Dog.find()
+        console.log(allDogs)
+        res.render("./dogs/index.ejs",{
+            dogs:allDogs
+        })
+    }
+ catch(err){
+    //console.log(err);
+    res.send(err); 
+}
+})
 
-    console.log("The Index Route work");
-    res.render("./dogs/index.ejs")
+//NEW ROUTE
+router.get("/new", (req, res) => {
+    res.render("dogs/new.ejs")
 })
     
+//CREATE ROUTE
+router.post('/', async(req, res) => {
+    try{
+        const newDog =  await Dog.create(req.body)
+        res.redirect('/dogs'); 
+    }
+catch(err){
+    res.send(err);
+    console.log(err);
+}
+    
+})
 
+//SHOW ROUTE
+router.get("/:id", async(req, res) => {
+    const foundDog = await Dog.findById(req.params.id)
+    res.render('dogs/show.ejs', {
+        oneDog:foundDog
+    });
+});
 
-// NEW ROUTE
+//DELETE
+router.delete("/:id", async(req, res) => {
+    try{
+        const deleteDog = await Dog.findOneAndDelete({ _id: req.params.id });
+        res.redirect('/dogs');
+    }
+  catch(err){
+    console.log(err);
+      res.send(err);
+  }
+})
 
-// POST/CREATE ROUTE
+//EDIT ROUTE
+router.get("/:id/edit", async(req, res) => {
+    try{
+        const foundDog = await Dog.findById(req.params.id)
+        res.render('dogs/edit.ejs', {
+            oneDog:foundDog
+    })
+}
+    catch(err){
+        console.log(err);
+        res.send(err);
+    }
+        
+    })
 
-// SHOW ROUTE
+    //PUT ROUTE
+    router.put("/:id", async(req, res) => {
+        try{
+            const newDog = await Dog.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            res.redirect('/dogs');
+        }
+    
+        catch(err){
+            console.log(err);
+            res.send(err);
+        }
+    })
 
-// EDIT ROUTE
+    module.exports = router;
 
-// UPDATE ROUTE
-
-// DELETE ROUTE

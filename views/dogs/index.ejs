@@ -8,5 +8,26 @@
 </head>
 <body>
     <h1>Your dogs will be shown here</h1>
+
+     <a href="/dogs/new">Add a new Dog</a>
+    
+        <div>
+            <ul>
+    <%dogs.forEach(function(dog){%>
+     <li>
+     <a href="/dogs/<%=dog.id%>"><%=dog.name %></a>
+       <form action="dogs/<%=dog.id%>/edit">
+   <input type="submit" value="EDIT <%=dog.name%>">
+     </form>
+
+     <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST">
+   <input type="submit" value="DELETE <%=dog.name%>">
+     </form>
+     </li>
+   <% })%>
+    </ul>
+   </div>
+   
+
 </body>
 </html>
