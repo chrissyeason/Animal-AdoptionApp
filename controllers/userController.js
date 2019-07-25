@@ -13,6 +13,13 @@ router.get("/new", (req, res)=>{
     }
 })
 
+
+
+router.get('/landing', (req, res)=>{
+    res.render('/landing.ejs')
+})
+
+
 // create new user route
 router.post('/', async (req, res) =>{
     try{
