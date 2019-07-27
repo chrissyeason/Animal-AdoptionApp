@@ -6,7 +6,10 @@ const dogSchema = new Schema({
     breed: String,
     age: Number,
     gender: String,
-    description: String
+    description: String,
+    img: 
+        { data: Buffer, contentType: String }
+    
 })
 
 const Dog =  mongoose.model("Dog",dogSchema);
