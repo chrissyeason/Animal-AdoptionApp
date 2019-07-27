@@ -7,6 +7,7 @@
     <title>New Cat</title>
 </head>
 <body>
+<%- include ../partials/_navbar.ejs %>
     <h1>Let's add a new cat for adoption</h1>
     <form action="/cats" method="POST">
         <label for="name">name:</label>
@@ -20,7 +21,10 @@
         </select>
         <label for="description">description:</label>
             <textarea type="text" name="description"></textarea>
+        <label for="image">image:</label>
+            <input type="text" name="image">
         <input type="submit" value="create">            
     </form>
+    <%- include ../partials/_footer.ejs %>
 </body>
 </html>
