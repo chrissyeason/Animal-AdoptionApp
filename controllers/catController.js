@@ -32,7 +32,8 @@ router.post('/', async (req, res)=>{
         res.send(err)
         console.log(err)
     }
-})
+ })
+ 
 // SHOW ROUTE
 router.get('/:id', async (req, res) =>{
     const cat = await Cats.findById(req.params.id);
