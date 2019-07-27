@@ -7,7 +7,8 @@
     <title>Your cat</title>
 </head>
 <body>
-    <a href="/cats">back home</a>
+<%- include ../partials/_navbar.ejs %>
+     <a href="/cats">back home</a>
     <form method="POST" action="/cats/<%=catId%>?_method=PUT">
        <label for="name">name:</label>
             <input type="text" value="<%=cat.name%>" name="name">

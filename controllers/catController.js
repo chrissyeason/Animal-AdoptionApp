@@ -24,20 +24,16 @@ router.get('/new', (req, res) =>{
 
 // CREATE/POST ROUTE
 router.post('/', async (req, res)=>{
-
     try {
         await Cats.create(req.body);
-        var newCat = new Cat();
- newCat.img.data = fs.readFileSync(req.files.userPhoto.path)
- newCat.img.contentType = 'image/png';
- newCat.save();
         res.redirect('/cats');
         console.log(req.body);
     }catch(err){
         res.send(err)
         console.log(err)
     }
-})
+ })
+ 
 // SHOW ROUTE
 router.get('/:id', async (req, res) =>{
     const cat = await Cats.findById(req.params.id);

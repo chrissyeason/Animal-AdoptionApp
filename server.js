@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userController);
 app.use('/cats', catController);
 app.use('/dogs', dogController);
-app.use('/images', express.static( 'images'))
+app.use('/images', express.static('images'))
 
 app.get('/', (req, res) =>{
     res.render('index.ejs');
