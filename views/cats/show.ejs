@@ -7,11 +7,12 @@
     <title>Your cat</title>
 </head>
 <body>
-    <a href="/cats">back home</a>
+<%- include ../partials/_navbar.ejs %>
+     <a href="/cats">back home</a>
     <h1><%=cat.name%></h1>
     <h2><%=cat.age%></h2>
     <h2><%=cat.gender%></h2>
     <h2><%=cat.description%></h2>
-
+<p>Image:<img src ="<%=cat.image%>" alt = "cat Image"></p>
 </body>
 </html>

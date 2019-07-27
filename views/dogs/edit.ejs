@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+   <%- include ../partials/_navbar.ejs %>
     <h1>Edit Dog Form</h1>
     <form action="/dogs/<%=oneDog.id%>?_method=PUT" method= "POST">
     <label for="name">name:</label>
