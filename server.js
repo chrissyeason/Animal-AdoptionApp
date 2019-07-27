@@ -1,5 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path')
+const multer = require('multer');
+const fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -16,11 +19,18 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
     resave:false,
     saveUninitialized:false
 }))
+
+// app.use(multer({ dest: './uploads/',
+//     rename: function (fieldname, filename) {
+//       return filename;
+//     },
+//    }));
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userController);
 app.use('/cats', catController);
 app.use('/dogs', dogController);
+app.use('/images', express.static('images'))
 
 app.get('/', (req, res) =>{
     res.render('index.ejs');
