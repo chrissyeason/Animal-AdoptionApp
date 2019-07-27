@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const dogSchema = new Schema({
     name: String,
@@ -10,5 +10,5 @@ const dogSchema = new Schema({
     image: String
 })
 
-const Dog =  mongoose.model("Dog",dogSchema);
+const Dog =  mongoose.model("Dog", dogSchema);
 module.exports = Dog;

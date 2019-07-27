@@ -43,3 +43,10 @@ app.get('/landing', (req, res)=>{
 app.listen(3000, ()=>{
     console.log("The animal App is ready!!!");
 })
+
+//Establish Connection with Mongo
+mongoose.connect(mongoURI,{useNewUrlParser:true});
+mongoose.connection.once("open",()=>{
+    console.log("Connected to Mongo")
+})
+

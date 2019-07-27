@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-   <%- include ../partials/_navbar.ejs %>
+<%- include ../partials/_navbar.ejs %>
     <h1>Edit Dog Form</h1>
     <form action="/dogs/<%=oneDog.id%>?_method=PUT" method= "POST">
     <label for="name">name:</label>
@@ -23,7 +23,10 @@
         </select>
     <label for="description">description:</label>
     <input type="description" name="description" value="<%=oneDog.description%>">
+   <label for="image">image:</label>  
+      <input type="text" name="image">
        <input type="submit" value="Submit">
     </form>
+    <%- include ../views/partials/_footer.ejs %>
 </body>
 </html>
