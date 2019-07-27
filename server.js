@@ -16,6 +16,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
     resave:false,
     saveUninitialized:false
 }))
+app.use(express.static('public'))
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userController);
