@@ -23,14 +23,15 @@ router.get('/new', (req, res) =>{
 })
 
 // CREATE/POST ROUTE
-router.post('/', async (req, res)=>{
+router.post('/',async (req, res)=>{
     try {
         await Cats.create(req.body);
+        console.log(` This is ${req.file}`);
         res.redirect('/cats');
-        console.log(req.body);
+        //console.log(req.body);
     }catch(err){
         res.send(err)
-        console.log(err)
+        //console.log(err)
     }
 })
 // SHOW ROUTE
