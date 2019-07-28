@@ -10,6 +10,8 @@
 <body>
 <%- include ../partials/_navbar.ejs %>
    <h1>Dog's User Profile </h1>
+   <%- include /partials/_navbar.ejs %>
+
       <a href="/dogs">Go Back</a>
       <a href="/dogs/<%=oneDog._id%>/edit"> Edit Dog</a>
     <p>Name of Dog: <%=oneDog.name%></p>

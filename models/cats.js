@@ -9,6 +9,5 @@ const catSchema = new Schema ({
     image: 
     { data: Buffer, contentType: String }
 })
-
 const Cat = mongoose.model('cat', catSchema);
 module.exports = Cat;
