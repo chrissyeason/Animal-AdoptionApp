@@ -23,9 +23,29 @@ const storage = multer.diskStorage({
 
 //INIT Upload.
 const upload = multer({
-    storage: storage
+    storage: storage,
+    fileFilter : function(req, file, cb){
+    checktypeofFile(file,cb)
+}
 }).single('image')
-//Middleware to use Storage for Upload
+
+//  Check to  make Sure File Matches image Extensions of jpg,png, jpeg 
+function checktypeofFile(file,cb){
+    const fileTypes = /jpeg|jpg|gif|png/;//Types of Files Allowed
+    //Check extension Matches fileTypes
+    const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
+    console.log(extName);
+    //check MimeType
+    const mimeType = fileTypes.test(file.mimeType);
+    console.log(mimeType);
+    if(extName === true  && mimeType === true){
+        return cb(null,true);
+    }
+    else {
+            cb("Error: Allows Image Files Only")
+        }
+}
+//Middleware to use Storage for Upload for Multer.
 app.use(upload)
 
 mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
@@ -33,25 +53,19 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
  });
 
 
-//Disk Storage
-
  app.use(session({
     secret: "SecretStuff",
     resave:false,
     saveUninitialized:false
 }))
 
-// app.use(multer({ dest: './uploads/',
-//     rename: function (fieldname, filename) {
-//       return filename;
-//     },
-//    }));
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userController);
 app.use('/cats', catController);
 app.use('/dogs', dogController);
 app.use('/images', express.static('images'))
+app.use('/uploads', express.static('public/uploads')) //For Images users will upload
 
 app.get('/', (req, res) =>{
     res.render('index.ejs');

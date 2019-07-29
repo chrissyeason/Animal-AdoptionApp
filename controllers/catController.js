@@ -24,9 +24,10 @@ router.get('/new', (req, res) =>{
 
 // CREATE/POST ROUTE
 router.post('/',async (req, res)=>{
+    console.log(req.body)
     try {
         await Cats.create(req.body);
-        console.log(` This is ${req.file}`);
+        console.log(req.file);
         res.redirect('/cats');
         //console.log(req.body);
     }catch(err){
@@ -38,6 +39,7 @@ router.post('/',async (req, res)=>{
 // SHOW ROUTE
 router.get('/:id', async (req, res) =>{
     const cat = await Cats.findById(req.params.id);
+    console.log(cat);
     res.render('./cats/show.ejs', {
         cats : req.body.cat,
         cat : cat
