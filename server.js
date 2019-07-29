@@ -31,14 +31,19 @@ const upload = multer({
 
 //  Check to  make Sure File Matches image Extensions of jpg,png, jpeg 
 function checktypeofFile(file,cb){
-    const fileTypes = /jpeg|jpg|gif|png/;//Types of Files Allowed
+
+    const fileTypes = /jpg|jpeg|gif|png/;//Types of Files Allowed
     //Check extension Matches fileTypes
+    console.log(file);
+    
     const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
     console.log(extName);
+
     //check MimeType
-    const mimeType = fileTypes.test(file.mimeType);
+    const mimeType = fileTypes.test(file.mimetype);
     console.log(mimeType);
-    if(extName === true  && mimeType === true){
+
+    if(extName && mimeType){
         return cb(null,true);
     }
     else {

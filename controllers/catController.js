@@ -27,7 +27,7 @@ router.post('/',async (req, res)=>{
     console.log(req.body)
     try {
         await Cats.create(req.body);
-        console.log(req.file);
+        //console.log(req.file);
         res.redirect('/cats');
         //console.log(req.body);
     }catch(err){
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) =>{
     const cat = await Cats.findById(req.params.id);
     console.log(cat);
     res.render('./cats/show.ejs', {
-        cats : req.body.cat,
+       // cats : req.body.cat,
         cat : cat
     })
 })
