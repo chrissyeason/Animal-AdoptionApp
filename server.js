@@ -32,6 +32,23 @@ app.use('/cats', catController);
 app.use('/dogs', dogController);
 app.use('/images', express.static('images'))
 
+// setting storage engine
+const storage = multer.diskStorage({
+    destination: './images/',
+    filename: function(req, file, cb){
+      cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+  });
+
+  // Init Upload
+const upload = multer({
+  storage: storage,
+  limits:{fileSize: 1000000},
+  fileFilter: function(req, file, cb){
+    checkFileType(file, cb);
+  }
+}).single('images');
+
 app.get('/', (req, res) =>{
     res.render('index.ejs');
 })

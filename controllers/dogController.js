@@ -44,6 +44,12 @@ router.get("/:id", async(req, res) => {
     });
 });
 
+//FILE POST
+router.post('/images', (req, res) => {
+res.send(test)
+});
+
+
 //DELETE
 router.delete("/:id", async(req, res) => {
     try{
