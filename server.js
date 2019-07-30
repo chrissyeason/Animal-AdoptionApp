@@ -29,6 +29,10 @@ const upload = multer({
 }
 }).single('image')
 
+//Middleware to use Storage for Upload for Multer.
+app.use(upload)
+
+
 //  Check to  make Sure File Matches image Extensions of jpg,png, jpeg 
 function checktypeofFile(file,cb){
 
@@ -37,11 +41,11 @@ function checktypeofFile(file,cb){
     console.log(file);
     
     const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
-    console.log(extName);
+    //console.log(extName);
 
     //check MimeType
     const mimeType = fileTypes.test(file.mimetype);
-    console.log(mimeType);
+    //console.log(mimeType);
 
     if(extName && mimeType){
         return cb(null,true);
@@ -50,8 +54,6 @@ function checktypeofFile(file,cb){
             cb("Error: Allows Image Files Only")
         }
 }
-//Middleware to use Storage for Upload for Multer.
-app.use(upload)
 
 mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
     console.log("the connection with mongodb is established")
@@ -70,7 +72,7 @@ app.use("/user", userController);
 app.use('/cats', catController);
 app.use('/dogs', dogController);
 app.use('/images', express.static('images'))
-app.use('/uploads', express.static('public/uploads')) //For Images users will upload
+app.use('/public/uploads', express.static('public/uploads')) //For Images users will upload
 
 app.get('/', (req, res) =>{
     res.render('index.ejs');
