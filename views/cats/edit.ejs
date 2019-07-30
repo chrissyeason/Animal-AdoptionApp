@@ -11,7 +11,7 @@
 
     <a href="/cats">back home</a>
 
-    <form method="POST" action="/cats/<%=catId%>?_method=PUT">
+    <form method="POST" action="/cats/<%=catId%>?_method=PUT" enctype="multipart/form-data">
        <label for="name">name:</label>
             <input type="text" value="<%=cat.name%>" name="name">
         <label for="age">age:</label>
