@@ -7,6 +7,7 @@ router.get('/', async (req, res) =>{
     try {
         const cats = await Cats.find();
         res.render('./cats/index.ejs', {
+           // catImage : req.file.filename,
             cats : cats
         });
     }catch(err){
@@ -23,22 +24,26 @@ router.get('/new', (req, res) =>{
 })
 
 // CREATE/POST ROUTE
-router.post('/', async (req, res)=>{
+router.post('/',async (req, res)=>{
+    const catImage = req.file.filename;
+    console.log(catImage);
     try {
-        await Cats.create(req.body);
+        const cat = await Cats.create({ name: req.body.name, age: req.body.age, gender: req.body.gender,description: req.body.description, image: catImage });
+        //console.log(cat);
         res.redirect('/cats');
-        console.log(req.body);
+        //console.log(req.body);
     }catch(err){
         res.send(err)
-        console.log(err)
+        //console.log(err)
     }
  })
  
 // SHOW ROUTE
 router.get('/:id', async (req, res) =>{
     const cat = await Cats.findById(req.params.id);
+    //const catImage = await Cats.find(req.file.filename)
+    //console.log(cat);
     res.render('./cats/show.ejs', {
-        cats : req.body.cat,
         cat : cat
     })
 })
@@ -53,8 +58,9 @@ router.get('/:id/edit', async (req, res)=>{
 })
 // UPDATE ROUTE
 router.put('/:id', async (req, res) =>{
+    const catImage = req.file.filename;
     try{
-        const cats = await Cats.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        const cats = await Cats.findByIdAndUpdate(req.params.id,{ name: req.body.name, age: req.body.age, gender: req.body.gender,description: req.body.description, image: catImage }, {new: true}, );
         console.log(cats);
         res.redirect('/cats');
     }catch(err){

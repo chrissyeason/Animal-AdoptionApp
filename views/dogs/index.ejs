@@ -19,13 +19,13 @@
        <form action="dogs/<%=dog.id%>/edit">
    <input type="submit" value="EDIT <%=dog.name%>">
      </form>
-     <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST">
+     <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
    <input type="submit" value="DELETE <%=dog.name%>">
      </form>
      </li>
    <% })%>
     </ul>
    </div>
-   <%- include ../views/partials/_footer.ejs %>
+   <%- include ../partials/_footer.ejs %>
 </body>
 </html>

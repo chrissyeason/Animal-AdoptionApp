@@ -6,8 +6,7 @@ const catSchema = new Schema ({
     age: Number,
     gender: String,
     description: String,
-    image:  String
+    image:  String 
 })
-
 const Cat = mongoose.model('cat', catSchema);
 module.exports = Cat;
