@@ -10,15 +10,14 @@
 <body>
 <%- include ../partials/_navbar.ejs %>
    <h1>Dog's User Profile </h1>
-   <%- include /partials/_navbar.ejs %>
-
-      <a href="/dogs">Go Back</a>
+      <a href="/dogs">back home</a>
       <a href="/dogs/<%=oneDog._id%>/edit"> Edit Dog</a>
     <p>Name of Dog: <%=oneDog.name%></p>
     <p>Breed of Dog: <%=oneDog.breed%></p>
     <p>Age of Dog: <%=oneDog.age%></p>
+    <p>Description: <%=oneDog.description%></p>
     <p>Sex: <%=oneDog.gender%></p>
-   <p>Image:<img src ="<%=oneDog.image%>" alt = "dog Image"></p>
+    <img src="../public/uploads/<%=oneDog.image%>">
    <%- include ../partials/_footer.ejs %>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

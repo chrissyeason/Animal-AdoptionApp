@@ -20,13 +20,15 @@ router.get("/", async(req,res)=>{
 
 //NEW ROUTE
 router.get("/new", (req, res) => {
-    res.render("dogs/new.ejs")
+    res.render("./dogs/new.ejs")
 })
     
 //CREATE ROUTE
 router.post('/', async(req, res) => {
+    const dogImage = req.file.filename;
+    console.log(dogImage);
     try{
-        const newDog =  await Dog.create(req.body)
+        const newDog = await Dog.create({ name: req.body.name, breed:req.body.breed, age: req.body.age, gender: req.body.gender,description: req.body.description, image: dogImage});
         res.redirect('/dogs'); 
     }
 catch(err){
@@ -35,11 +37,10 @@ catch(err){
 }
     
 })
-
 //SHOW ROUTE
 router.get("/:id", async(req, res) => {
     const foundDog = await Dog.findById(req.params.id)
-    res.render('dogs/show.ejs', {
+    res.render('./dogs/show.ejs', {
         oneDog:foundDog
     });
 });
@@ -77,10 +78,11 @@ router.get("/:id/edit", async(req, res) => {
         
     })
 
-    //PUT ROUTE
+    //UPDATE ROUTE
     router.put("/:id", async(req, res) => {
+        const dogImage = req.file.filename;
         try{
-            const newDog = await Dog.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const newDog = await Dog.findByIdAndUpdate(req.params.id,{ name: req.body.name, breed:req.body.breed, age: req.body.age, gender: req.body.gender,description: req.body.description, image: dogImage}, { new: true })
             res.redirect('/dogs');
         }
     
