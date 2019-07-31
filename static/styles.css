@@ -39,6 +39,15 @@ button {
     margin-top: 18px;
 }
 
+button a {
+    color: black;
+    padding-left: 13px;
+}
+
+button a:hover {
+    color: black;
+}
+
 a {
     color: #797474;
     margin-right: 30px;
