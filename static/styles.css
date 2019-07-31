@@ -1,0 +1,59 @@
+/* #max-height {
+    position: absolute;
+    height: 100%;
+} */
+#cream-background {
+    background-color: yellow;
+}
+
+#caption {
+    position: absolute;
+    bottom: 188px;
+    left: 106px;
+}
+
+#caption h2 {
+    margin-top: 40px;
+    color: #797474;
+    font-size: 1.5em;
+}
+
+#nav-login {
+    position: absolute;
+    top: 4em;
+    left: 106px;
+}
+
+#logo {
+    max-width: 35%;
+    position: relative;
+    left: -35px;
+}
+
+button {
+    background-image: linear-gradient(to right, orange , #fdb0a1);
+    color: black;
+    border-radius: 7px;
+    border-color: orange;
+    width: 105px;
+    margin-top: 18px;
+}
+
+button a {
+    color: black;
+    padding-left: 13px;
+}
+
+button a:hover {
+    color: black;
+}
+
+a {
+    color: #797474;
+    margin-right: 30px;
+}
+
+a:hover {
+    color: #ff9966;
+    text-decoration: none;
+}

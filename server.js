@@ -71,16 +71,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/user", userController);
 app.use('/cats', catController);
 app.use('/dogs', dogController);
-app.use('/images', express.static('images'))
-app.use('/public/uploads', express.static('public/uploads')) //For Images users will upload
+app.use('/images', express.static('images'));
+app.use('/static', express.static('static'));
+app.use('/public/uploads', express.static('public/uploads')); //For Images users will upload
 
 app.get('/', (req, res) =>{
-    res.render('index.ejs');
+    res.render('landing.ejs');
 })
 
-app.get('/landing', (req, res)=>{
-    res.render('landing.ejs')
-})
+// app.get('/landing', (req, res)=>{
+//     res.render('landing.ejs')
+// })
 
 app.listen(3000, ()=>{
     console.log("The animal App is ready!!!");
