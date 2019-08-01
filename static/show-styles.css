@@ -1,0 +1,79 @@
+body{
+    background-color:white;
+}
+
+#nav-login {
+    top: 44px;
+    left: 50%;
+}
+
+#logo{
+height: 12;
+width: 30%;
+margin-left: 23%;
+margin-right: 7%;
+}
+
+#nav-login {
+    top: 44px;
+    left: 50%;
+}
+p{
+
+    color: #555151a1;
+    margin-left: 55%;
+    font-size: 20px;
+    text-decoration: none;
+}
+a {
+    color: #363434a1;
+    margin-right: 25px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.devider{
+    height:.5;
+    border: solid #ff9966 1px;
+
+    width: 150px;
+}
+
+#pic{
+    margin-right: 1%;
+    width: 25%;
+    height: 55%;
+    position: absolute;
+    top: 20%;
+    left: 28%;
+    z-index: 5;
+}
+#name{
+    margin-bottom: 4px;
+}
+#data{
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 5%;
+    color: #363434a1;
+    font-size: 30px;
+    height: auto;
+    width: 13%;
+    position: absolute;
+    top: 17%;
+    right: 30%;
+    z-index: 5;
+}
+#leftpaw{
+    width: 45%;
+    position: relative;
+    left: 10%;
+    bottom: 0%;
+    z-index: 1;
+}
+#rightpaw {
+    width: 12%;
+    position: absolute;
+    right: 1px;
+    bottom: 0%;
+    z-index: 1;
+}

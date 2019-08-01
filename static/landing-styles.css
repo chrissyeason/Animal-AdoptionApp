@@ -1,0 +1,135 @@
+/* LANDING PAGE NAV */
+#nav-login {
+    position: absolute;
+    top: 4em;
+    left: 106px;
+}
+/* LANDING PAGE LOGO AND REGISTER */
+#caption {
+    position: absolute;
+    bottom: 97px;
+    left: 106px;
+}
+
+#caption h2 {
+    margin-top: 40px;
+    color: #797474;
+    font-size: 1.5em;
+}
+
+#logo {
+    max-width: 40%;
+    position: absolute;
+    left: 65px;
+    bottom: 240px;
+}
+
+button {
+    background-image: linear-gradient(to right, orange , #fdb0a1);
+    color: black;
+    border-radius: 7px;
+    border-color: orange;
+    width: 105px;
+    margin-top: 18px;
+}
+
+button a {
+    color: black;
+    padding-left: 13px;
+}
+
+button a:hover {
+    color: black;
+}
+
+a {
+    color: #797474;
+    margin-right: 30px;
+}
+
+a:hover {
+    color: #ff9966;
+    text-decoration: none;
+}
+/* PET HIGHLIGHTS */
+#pet-highlights {
+  margin: 0 auto;
+  max-width: 900px;
+  margin-bottom: 50px;
+}
+#pet-highlights img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 3px solid #ff9966;
+    display: inline;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+h1 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+h3 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+/* footer */
+footer {
+    font-size: 12px;
+    padding-top: 50px;
+}
+/* LANDING PAGE MEDIA QUERIES */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+/* landing page */
+#logo{
+    max-width: 70%;
+    position: absolute;
+    top: 94px;
+    left: 14%;
+}
+#caption {
+    bottom: 9px;
+}
+#nav-login {
+    top: 44px;
+    left: 50%;
+}
+.carousel-item active {
+    height: 100%;
+    width: auto;
+}
+#cat-img {
+    height: 400px;
+}
+#dog-img {
+    height: 400px;
+    width: 1024px;
+}
+a {
+    color: #797474;
+    margin-right: 18px;
+    font-size: 18px;
+}
+#caption h2 {
+    text-align: center;
+    position: relative;
+    left: -10%;
+    top: 40px;
+}
+button {
+    position: relative;
+    bottom: 96px;
+    left: 43px;
+}
+/* pet highlights page */
+h1 {
+    font-size: 200%;
+}
+}
