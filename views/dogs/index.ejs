@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/index-styles.css">
+    <title>dogIndex</title>
 </head>
 <body>
 <%- include ../partials/_navbar.ejs %>
-    <h1>Your dogs will be shown here</h1>
      <a href="/dogs/new">Add a new Dog</a>
-    
         <div>
-            <ul>
-    <%dogs.forEach(function(dog){%>
-     <li>
-     <a href="/dogs/<%=dog.id%>"><%=dog.name %></a>
-       <form action="dogs/<%=dog.id%>/edit">
-   <input type="submit" value="EDIT <%=dog.name%>">
-     </form>
-     <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
-   <input type="submit" value="DELETE <%=dog.name%>">
-     </form>
-     </li>
+          <ul>
+            <%dogs.forEach(function(dog){%>
+              <li>
+                  <a href="/dogs/<%=dog.id%>"><%=dog.name %>
+                   <img src="../public/uploads/<%=dog.image%>"></a>
+                  <form action="dogs/<%=dog.id%>/edit">
+                  <input type="submit" value="EDIT <%=dog.name%>">
+                  </form>
+                  <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                  <input type="submit" value="DELETE <%=dog.name%>">
+                  </form>
+              </li>
    <% })%>
     </ul>
    </div>
