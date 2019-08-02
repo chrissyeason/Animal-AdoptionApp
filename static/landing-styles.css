@@ -7,21 +7,20 @@
 /* LANDING PAGE LOGO AND REGISTER */
 #caption {
     position: absolute;
-    bottom: 97px;
+    bottom: 25%;
     left: 106px;
-}
-
-#caption h2 {
-    margin-top: 40px;
-    color: #797474;
-    font-size: 1.5em;
 }
 
 #logo {
     max-width: 40%;
     position: absolute;
     left: 65px;
-    bottom: 240px;
+    bottom: 40%;
+}
+#caption h2 {
+    margin-top: 40px;
+    color: #797474;
+    font-size: 1.5em;
 }
 
 button {
