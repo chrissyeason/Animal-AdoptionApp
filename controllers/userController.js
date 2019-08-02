@@ -28,7 +28,7 @@ router.post('/', async (req, res) =>{
         req.body.password = bcrypt.hashSync(req.body.password, salt);
         const newUser = await User.create(req.body);
         req.session.userId = newUser._id;
-        res.redirect('/landing');
+        res.redirect('/index');
     }catch(err){
         console.log(err)
         res.send(err)

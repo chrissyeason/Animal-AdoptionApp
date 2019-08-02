@@ -79,9 +79,9 @@ app.get('/', (req, res) =>{
     res.render('landing.ejs');
 })
 
-// app.get('/landing', (req, res)=>{
-//     res.render('landing.ejs')
-// })
+app.get('/index', (req, res)=>{
+    res.render('index.ejs')
+})
 
 app.listen(3000, ()=>{
     console.log("The animal App is ready!!!");
