@@ -15,14 +15,15 @@
          <div class="container">
             <% cats.forEach(function(cat) {%>
                <div class="col-3">
-               <a href="/cats/<%=cat._id %>"><img src="../public/uploads/<%=cat.image%>">
+               <a href="/cats/<%=cat._id %>" class="nameImage">
+               <img src="../public/uploads/<%=cat.image%>">
                <div class="divider"></div>
                <%=cat.name%></a>
                 <form action="/cats/<%= cat._id %>/edit">
-               <input class="btn btn-outline-dark" type="submit" value="EDIT <%=cat.name%>">
+               <input class="btn btn-outline-secondary btn-xs" type="submit" value="EDIT <%=cat.name%>">
                </form>
                <form action="/cats/<%= cat._id%>?_method=DELETE" method="POST">
-               <input class="btn btn-outline-danger" type="submit" value="DELETE <%=cat.name%>">
+               <input class="btn btn-outline-danger btn-xs" type="submit" value="DELETE <%=cat.name%>">
                </form>
       </div>
    <%})%>

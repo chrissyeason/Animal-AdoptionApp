@@ -1,11 +1,12 @@
-a {
-    color: black;
-
+.nameImage{
+    color:darkgrey;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Single Day', cursive;
   }
-
+a:hover{
+    color: #ff9966 ;
+}
   img {
     /* border: 1px solid #ddd;
     border-radius: 4px; */
