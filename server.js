@@ -75,7 +75,7 @@ app.use('/images', express.static('images'));
 app.use('/static', express.static('static'));
 app.use('/public/uploads', express.static('public/uploads')); //For Images users will upload
 
-app.get('/home', (req, res) =>{
+app.get('/', (req, res) =>{
     res.render('landing.ejs');
 })
 
