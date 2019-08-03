@@ -12,13 +12,10 @@ router.get("/new", (req, res)=>{
         console.log(err)
     }
 })
-
-
-
+// ROUTE TO FIRST PAGE
 router.get('/landing', (req, res)=>{
     res.render('/landing.ejs')
 })
-
 
 // create new user route
 router.post('/', async (req, res) =>{
@@ -28,7 +25,7 @@ router.post('/', async (req, res) =>{
         req.body.password = bcrypt.hashSync(req.body.password, salt);
         const newUser = await User.create(req.body);
         req.session.userId = newUser._id;
-        res.redirect('/index');
+        res.redirect('/about');
     }catch(err){
         console.log(err)
         res.send(err)
@@ -37,18 +34,19 @@ router.post('/', async (req, res) =>{
 
 // log in get route render login.ejs 
 router.get('/login', (req, res)=>{
-   res.render('user/login.ejs')
+   res.render('/login.ejs')
 });
 
 // // log in post route
 router.post("/login", async (req, res)=>{
+    
     try{
         const userFromDb = await User.findOne({username: req.body.username})
         const passwordIsValid = bcrypt.compareSync(req.body.password, userFromDb.password)
 
         if(passwordIsValid){
                 req.session.userId = userFromDb._id;
-                res.redirect('/landing')
+                res.redirect('/about')
                 console.log(userFromDb)
             }else{
                 res.send("not valid password")

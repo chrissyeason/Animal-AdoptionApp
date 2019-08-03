@@ -79,8 +79,8 @@ app.get('/', (req, res) =>{
     res.render('landing.ejs');
 })
 
-app.get('/index', (req, res)=>{
-    res.render('index.ejs')
+app.get('/about', (req, res)=>{
+    res.render('about.ejs')
 })
 
 app.listen(3000, ()=>{
