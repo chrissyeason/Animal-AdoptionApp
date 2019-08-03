@@ -30,18 +30,23 @@ a {
 
 #pic{
     margin-right: 1%;
-    /* max-width: 25%; */
-    max-height: 55%;
+    max-width: 500px;
+    max-height: 600px;
+
+    /* width: 20%;
+    height: 35%; */
     position: absolute;
     top: 20%;
-    left: 28%;
+    left: 35%;
     z-index: 5;
+    padding:5px;
+    border:4px solid #363434a1;
+
 }
 #name{
     margin-bottom: 4px;
 }
 #data{
-    
     margin-left: 5%;
     color: #363434a1;
     font-size: 30px;
@@ -49,14 +54,14 @@ a {
     width: 13%;
     position: absolute;
     top: 17%;
-    right: 30%;
+    right: 26%;
     z-index: 5;
 }
 #leftpaw{
     width: 45%;
-    position: absolute;
-    left: -6px;
-    bottom: -118px;
+    position: relative;
+    left: 0%;
+    top: 500px;
     z-index: 1;
 }
 #rightpaw {
