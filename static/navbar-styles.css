@@ -1,0 +1,24 @@
+nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+}
+#logo {
+    width: 300px;
+    position: relative;
+    top: 30px;
+    left: 10%;
+}
+a {
+    display: inline-block;
+    position: relative;
+    top: 57px;
+    left: 375px;
+    color: #797474;
+    margin-right: 30px;
+}
+a:hover{
+    color: #fdb0a1;
+    text-decoration: none;
+}
