@@ -1,8 +1,6 @@
 .nameImage{
-    color:darkgrey;
+    color:#797474;
     text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Single Day', cursive;
   }
 a:hover{
     color: #ff9966 ;
