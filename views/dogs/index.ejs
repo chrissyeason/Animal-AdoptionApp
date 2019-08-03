@@ -10,22 +10,24 @@
 </head>
 <body>
 <%- include ../partials/_navbar.ejs %>
-     <a href="/dogs/new">Add a new Dog</a>
-        <div>
-          <ul>
+<div>
+        <div class = "container">
+        
             <%dogs.forEach(function(dog){%>
-              <li>
-                  <a href="/dogs/<%=dog.id%>"><%=dog.name %>
-                   <img src="../public/uploads/<%=dog.image%>"></a>
+              <div class ="col-3">
+                  <a href="/dogs/<%=dog.id%>">
+                   <img src="../public/uploads/<%=dog.image%>">
+                  <div class="divider"></div>
+                  <%=dog.name %></a>
                   <form action="dogs/<%=dog.id%>/edit">
-                  <input type="submit" value="EDIT <%=dog.name%>">
+                  <input class="btn btn-outline-dark" type="submit" value="EDIT <%=dog.name%>">
                   </form>
                   <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
-                  <input type="submit" value="DELETE <%=dog.name%>">
+                  <input class="btn btn-outline-danger" type="submit" value="DELETE <%=dog.name%>">
                   </form>
-              </li>
+              </div>
    <% })%>
-    </ul>
+    </div>
    </div>
    <%- include ../partials/_footer.ejs %>
 </body>
