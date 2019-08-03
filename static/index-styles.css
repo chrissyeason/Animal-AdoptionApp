@@ -1,0 +1,39 @@
+.nameImage{
+    color:darkgrey;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Single Day', cursive;
+  }
+a:hover{
+    color: #ff9966 ;
+}
+  img {
+    /* border: 1px solid #ddd;
+    border-radius: 4px; */
+    width: 60%;
+    height:60%;
+    padding: 0.25em;
+    border-radius: 8px;
+  }
+  
+  /* img:hover {
+    box-shadow: 0 0 1px 1px rgba(186, 105, 0, 0.5);
+  } */
+  .container{
+   display:flex;
+   flex-wrap:wrap;
+   flex-direction: row ; 
+   justify-content: space-evenly;
+    
+}
+  .divider {
+    height: .5;
+    border: solid #ff9966 1px;
+    width: 60%;
+}
+
+/* footer */
+footer {
+    font-size: 12px;
+    padding-top: 50px;
+}
