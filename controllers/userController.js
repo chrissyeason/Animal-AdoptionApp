@@ -21,11 +21,12 @@ router.get('/landing', (req, res)=>{
 router.post('/', async (req, res) =>{
     try{
         const salt = bcrypt.genSaltSync();
-        console.log(req.body)
+        // console.log(req.body)
         req.body.password = bcrypt.hashSync(req.body.password, salt);
         const newUser = await User.create(req.body);
         req.session.userId = newUser._id;
         res.redirect('/about');
+        console.log(newUser);
     }catch(err){
         console.log(err)
         res.send(err)
@@ -34,11 +35,11 @@ router.post('/', async (req, res) =>{
 
 // log in get route render login.ejs 
 router.get('/login', (req, res)=>{
-   res.render('/login.ejs')
+   res.render('user/login.ejs')
 });
 
 // // log in post route
-router.post("/login", async (req, res)=>{
+router.post('/login', async (req, res)=>{
     
     try{
         const userFromDb = await User.findOne({username: req.body.username})
