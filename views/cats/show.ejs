@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../static/show-styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/show-styles.css">
 
     <title>Your cat</title>
 </head>
@@ -16,21 +17,19 @@
       </div>
 </div>
             <a href="/cats"></a>
-     <div info>
+     <div class="container">
       <img id="pic" src="../public/uploads/<%=cat.image%>">
       <div id="data">
            <h1 id="name"><%=cat.name%></h1>
-           <div class="devider"></div>
-           <h2>age: <%=cat.age%></h2>
-           <h2>gender: <%=cat.gender%></h2>
-           <h2><br><div class="devider"></div><%=cat.description%></h2>
-           
-   
+           <div class="divider"></div>
+           <h3>age: <%=cat.age%></h3>
+           <h3>gender: <%=cat.gender%></h3>
+           <h3><br><div class="divider"></div><%=cat.description%></h3>
        </div>
     </div>
     <img id="leftpaw" src="../images/paw-print-leftside.png" alt="left paw prints">
         <img id="rightpaw" src="../images/paw-print-rightside.png" alt="right paw prints">
 
-   <p><%- include ../partials/_footer.ejs %></p> 
+   <%- include ../partials/_footer.ejs %> 
 </body>
 </html>

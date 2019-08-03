@@ -2,24 +2,13 @@ body{
     background-color:white;
 }
 
-#nav-login {
-    top: 44px;
-    left: 50%;
+nav {
+    position: absolute;
+    top: 24px;
+    display: inline-block;
 }
 
-#logo{
-height: 12;
-width: 30%;
-margin-left: 23%;
-margin-right: 7%;
-}
-
-#nav-login {
-    top: 44px;
-    left: 50%;
-}
-p{
-
+p {
     color: #555151a1;
     margin-left: 55%;
     font-size: 20px;
@@ -32,7 +21,7 @@ a {
     text-decoration: none;
 }
 
-.devider{
+.divider{
     height:.5;
     border: solid #ff9966 1px;
 
@@ -41,8 +30,8 @@ a {
 
 #pic{
     margin-right: 1%;
-    width: 25%;
-    height: 55%;
+    /* max-width: 25%; */
+    max-height: 55%;
     position: absolute;
     top: 20%;
     left: 28%;
@@ -52,7 +41,7 @@ a {
     margin-bottom: 4px;
 }
 #data{
-    font-family: 'Times New Roman', Times, serif;
+    
     margin-left: 5%;
     color: #363434a1;
     font-size: 30px;
@@ -65,15 +54,24 @@ a {
 }
 #leftpaw{
     width: 45%;
-    position: relative;
-    left: 10%;
-    bottom: 0%;
+    position: absolute;
+    left: -6px;
+    bottom: -118px;
     z-index: 1;
 }
 #rightpaw {
-    width: 12%;
+    width: 9%;
     position: absolute;
     right: 1px;
     bottom: 0%;
     z-index: 1;
+}
+footer p{
+    position: absolute;
+    bottom: 0px;
+    left: 25%;
+    display: inline;
+    font-size: 12px;
+    z-index: 5;
+    text-align: center;
 }

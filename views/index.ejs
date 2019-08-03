@@ -6,14 +6,21 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/static/index-styles.css">
 </head>
 <body>
 <%- include ../views/partials/_navbar.ejs %>
-         <h1>WELCOME to my site</h1>
-          <a href="/user/new">Register if you're new</a>
-          <a href="/user/login">Login if you've been here before</a>
+        <div class="container">
+                <img src="images/index-cat-about.jpg">
+                <div id="caption">
+                <p>Meow Woof was created to bring <br>fostered animals into view in hopes <br>of
+                finding their forever home. <br>If you have fostered pets available <br>for adoption 
+                please add their details. <br>If you're looking for a pet to adopt, <br>browse our 
+                listings.</p>
+                <button><a href="/cats">cats</a></button><button><a href="/dogs">dogs</a></button>
+                </div>
+        </div>        
 
-<%- include ../views/partials/_footer.ejs %>
 </body>
 </html>
