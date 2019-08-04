@@ -11,14 +11,8 @@
     <title>Your cat</title>
 </head>
 <body>
-<div>
-      <div id="nav-login">
-           <a href="/index"><img src="/images/logo.png" id="logo"></a>  
-            <a href="/cats"id="cats">cats</a> <a href="/dogs" id="dogs">dogs</a> <a href="/user/new" id="signUp">sign up</a> <a href="/user/login" id="login">login</a>
-      </div>
-</div>
+<%- include ../views/partials/_navbar.ejs %>
 
-            <a href="/cats"></a>
      <div class="container">
       <img id="pic" src="../public/uploads/<%=cat.image%>">
       <div id="data">
