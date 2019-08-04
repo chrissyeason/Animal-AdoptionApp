@@ -1,24 +1,23 @@
 nav {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: inline-block;
+    margin-bottom: 2rem;
+    position: relative;
 }
 #logo {
-    width: 300px;
-    position: relative;
-    top: -11px;
-    left: -6%;
+    width: 30%;
+    margin-top: 3%;
+    margin-left: 7%;
 }
-a {
-    display: inline-block;
-    position: relative;
-    top: 57px;
-    left: 375px;
+#nav-menu {
+    position: absolute;
+    bottom: 14%;
+    right: 13%;
+}
+.nav-item {
     color: #797474;
     margin-right: 30px;
+    font-size: 1.75vw;
 }
-a:hover{
+a.nav-item:hover {
     color: #fdb0a1;
     text-decoration: none;
 }
