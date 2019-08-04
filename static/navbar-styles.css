@@ -17,7 +17,7 @@ nav {
     margin-right: 30px;
     font-size: 1.75vw;
 }
-.nav-item a:hover{
+a.nav-item:hover {
     color: #fdb0a1;
     text-decoration: none;
 }

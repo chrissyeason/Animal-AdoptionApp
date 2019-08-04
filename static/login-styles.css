@@ -1,71 +1,70 @@
-body { 
-    background: url("/images/login-pup.jpg"); 
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+body {
+  background: url("/images/login-pup.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .container {
-    max-width: 300px;
-    height: 450px;
-    background-color: rgba(0, 0, 0, 0.75);
-    position: fixed;
-    top: 20%;
-    left: 20%;
-    border-radius: 10px;
+  max-width: 300px;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  border-radius: 10px;
 }
 #logo {
-    margin-top: 100px;
-    margin-left: -143px;
-    opacity: 0.25;
-
+  margin-top: 100px;
+  margin-left: -143px;
+  opacity: 0.25;
 }
- h1 {
-     text-align: center;
-     margin-top: 88px;
-     color: white;
-     font-size: 30px;
- } 
- input {
-     position: relative;
-     margin: 0 auto;
-     top: 40px;
-     display: block;
-     margin-bottom: 30px;
-     padding-left: 10px;
- }
+h1 {
+  text-align: center;
+  margin-top: 88px;
+  color: white;
+  font-size: 30px;
+}
+input {
+  position: relative;
+  margin: 0 auto;
+  top: 40px;
+  display: block;
+  margin-bottom: 30px;
+  padding-left: 10px;
+}
 /* register button */
- [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-    background-image: linear-gradient(to right, orange , #fdb0a1);
-    border-radius: 7px;
-    border-color: orange;
-    width: 180px;
- }
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  background-image: linear-gradient(to right, orange, #fdb0a1);
+  border-radius: 7px;
+  border-color: orange;
+  width: 180px;
+}
 /* icon */
- img {
-     margin-top: -20px;
-     padding-left: 83px;
- }
- 
- @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-        body { 
-            background: url("/images/photo-1521417611542-86967c2ab11f.jpeg"); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 768px;
-        }
+img {
+  margin-top: -20px;
+  padding-left: 83px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    background: url("/images/photo-1521417611542-86967c2ab11f.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 768px;
+  }
   #logo {
-      width: 80%;
-      margin-top: 7%;
-  }      
+    width: 80%;
+    margin-top: 7%;
+  }
   .container {
-      left: 14%;
-      top: 22%;
-      height: 400px;
-  }  
+    left: 14%;
+    top: 22%;
+    height: 400px;
+  }
   h1 {
-      margin-top: 53px;
+    margin-top: 53px;
   }
-  }
+}
