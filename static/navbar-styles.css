@@ -7,8 +7,8 @@ nav {
 #logo {
     width: 300px;
     position: relative;
-    top: 30px;
-    left: 10%;
+    top: -11px;
+    left: -6%;
 }
 a {
     display: inline-block;
