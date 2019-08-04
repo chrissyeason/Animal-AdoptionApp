@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/static/footer-styles.css">
-    <link rel="stylesheet" type="text/css" href="/static/navbar-styles.css">
-    <link rel="stylesheet" type="text/css" href="../static/index-styles.css">
-    <title>dogIndex</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="/static/footer-styles.css">
+   <link rel="stylesheet" type="text/css" href="/static/navbar-styles.css">
+   <link rel="stylesheet" type="text/css" href="/static/show-styles.css">
+   <title>Your dog</title>
 </head>
 <body>
-<%- include ../partials/_navbar.ejs %>
-<div>
-        <div class = "container">
-        
-            <%dogs.forEach(function(dog){%>
-              <div class ="col-3">
-                  <a href="/dogs/<%=dog.id%>">
-                   <img src="../public/uploads/<%=dog.image%>">
-                  <div class="divider"></div>
-                  <%=dog.name %></a>
-                  <form action="dogs/<%=dog.id%>/edit">
-                  <input class="btn btn-outline-secondary" type="submit" value="EDIT <%=dog.name%>">
-                  </form>
-                  <form action="dogs/<%=dog.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
-                  <input class="btn btn-outline-danger" type="submit" value="DELETE <%=dog.name%>">
-                  </form>
-              </div>
-   <% })%>
-    </div>
+           <%- include ../partials/_navbar.ejs %>
+    <div class="container">
+     <img id="pic" src="../public/uploads/<%=dog.image%>">
+     <div id="data">
+          <h1 id="name"><%=dog.name%></h1>
+          <div class="divider"></div>
+          <h2>age: <%=dog.age%></h2>
+          <h2>gender: <%=dog.gender%></h2>
+          <h2><br><div class="divider"></div><%=dog.description%></h2>
+      </div>
    </div>
-   <%- include ../partials/_footer.ejs %>
+  <%- include ../partials/_footer.ejs %>
 </body>
-</html>
