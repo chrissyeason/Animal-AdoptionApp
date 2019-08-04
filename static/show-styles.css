@@ -21,6 +21,22 @@ a {
     font-size: 20px;
     text-decoration: none;
 }
+#buttons{
+    position: absolute;
+    bottom: 487px;
+    left: 961px;
+    z-index: 3;
+}
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+    border: 1px solid;
+    margin: 3px;
+    width: 122px;
+    position: absolute;
+    top: -43px;
+    left: -3px;
+}
 
 .divider{
     height:.5;
@@ -37,8 +53,8 @@ a {
     width: 20%;
     height: 35%;
     position: absolute;
-    top: 20%;
-    left: 35%;
+    top: 18%;
+    left: 40%;
     z-index: 5;
     padding:5px;
     border:4px solid #363434a1;
