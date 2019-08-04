@@ -19,7 +19,7 @@ p {
 }
 
 button {
-    background-image: linear-gradient(to right, orange , #fdb0a1);
+    background-image: linear-gradient(to right, orange , #ff9966);
     color: black;
     border-radius: 7px;
     border-color: orange;

@@ -37,7 +37,7 @@ input {
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
-  background-image: linear-gradient(to right, orange, #fdb0a1);
+  background-image: linear-gradient(to right, orange, #ff9966);
   border-radius: 7px;
   border-color: orange;
   width: 180px;
