@@ -23,9 +23,9 @@ a {
 }
 #buttons{
     position: absolute;
-    bottom: 487px;
+    bottom: 385px;
     left: 961px;
-    z-index: 3;
+    z-index: 5;
 }
 .btn-outline-secondary {
     color: #6c757d;
