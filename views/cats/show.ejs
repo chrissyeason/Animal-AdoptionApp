@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/footer-styles.css">
+   <link rel="stylesheet" type="text/css" href="/static/navbar-styles.css">
     <link rel="stylesheet" type="text/css" href="/static/show-styles.css">
     
     <title>Your cat</title>
 </head>
 <body>
-<%- include ../views/partials/_navbar.ejs %>
+<%- include ../partials/_navbar.ejs %>
 
-     <div class="container">
-      <img id="pic" src="../public/uploads/<%=cat.image%>">
-      <div id="data">
-           <h1 id="name"><%=cat.name%></h1>
-           <div class="divider"></div>
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-6" id="pic-container">
+                <img id="pic" src="../public/uploads/<%=cat.image%>">
+            </div>    
+            <div class="col-6" id="data">
+                <h1 id="name"><%=cat.name%></h1>
+                <div class="divider"></div>
 
-           <h2>age: <%=cat.age%></h2>
-           <h2>gender: <%=cat.gender%></h2>
-           <h2><br><div class="divider"></div><%=cat.description%></h2>
-
+                <h2>age: <%=cat.age%></h2>
+                <h2>gender: <%=cat.gender%></h2>
+                <h2><br><div class="divider"></div><%=cat.description%></h2>
+            </div>
        </div>
     </div>
     <img id="leftpaw" src="../images/paw-print-leftside.png" alt="left paw prints">
