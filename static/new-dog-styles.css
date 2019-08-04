@@ -1,0 +1,68 @@
+.container {
+    width: 50%;
+    margin-top: 3%;
+    background-image: linear-gradient(to right, #797474, #302c27);
+    width: 50%;
+    clear: both;
+    padding-top: 8%;
+    padding-left: 6%;
+    padding-right: 6%; 
+
+}
+.container input {
+    width: 100%;
+    clear: both;
+}
+h3 {
+    color: white;
+    margin-bottom: 3%;
+}
+/* create button */
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  background-color: #ff9966;
+  border-radius: 7px;
+  border-color: #ff9966;
+  width: 180px;
+  color: white;
+  margin-bottom: 15%;
+  margin-top: 5%;
+    box-shadow: 1px 2px 4px rgba(48, 44, 39, .5)
+}
+input[type=text] {
+    margin: 0 auto;
+    padding-top: 5%;
+    margin-bottom: 2%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+::placeholder {
+    color: #e3e3e3;
+}
+textarea {
+    width: 100%;
+}
+label {
+    margin-top: 3%;
+    color: white;
+}
+select {
+    background-color: #e3e3e3;
+}
+
+/* pic window on left side of page */
+#container-left-side {
+    padding: 2%;
+}
+#border {
+    height: 95%;
+    border: 2px solid white;
+    margin: 0 auto;
+}
+.btn {
+    background-color: #ff9966;
+}

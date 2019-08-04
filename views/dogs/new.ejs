@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="/static/footer-styles.css">
+   <link rel="stylesheet" type="text/css" href="/static/navbar-styles.css">
+   <link rel="stylesheet" type="text/css" href="../static/new-dog-styles.css">
+    <title>New Dog</title>
 </head>
 <body>
 <%- include ../partials/_navbar.ejs %>
-  <h2>Register Dog</h2>
-  
-    <form action="/dogs" method= "POST" enctype="multipart/form-data" >
-    <label for="name">name:</label>
-    <input type="text" name="name">
-    <label for="breed">breed:</label>
-    <input type="text" name="breed">
-    <label for="age">age:</label>
-    <input type="Number" name="age">
-    <label for="gender">gender:</label>
-    <select name="gender">
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
-    <label for="description">description:</label>
-    <input type="description" name="description">
-      <label for="image">image:</label>  
-      <input type="file" name="image">
-       <input type="submit" value="create">  
-    </form>
+   <div class="container">
+        <form action="/dogs" method="POST" enctype="multipart/form-data">
+        
+            <h3>Let's add a new dog!</h3>                                               
+                <input id="name-input" type="text" name="name" placeholder="name"><br>
+                <input id="breed-input" type="text" name="breed" placeholder="breed"><br>
+                <input id="age-input" type="text" name="age" placeholder="age">  
+                <label for="gender">gender:</label>
+            <select name="gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+                    <br>
+            <label for="description">description:</label>
+                <textarea type="text" name="description"></textarea><br>
+            <div class="custom-file">
+                    <input  type="file" class="custom-file-input"  id="customFile" name="image">
+                    <label class="custom-file-label" for="image">Choose Image</label>
+            </div>    
+            <input class="btn" type="submit" value="create">                
+        </form>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        bsCustomFileInput.init()
+        })
+    </script>    
     <%-include ../partials/_footer.ejs %>
 </body>
 </html>
