@@ -1,26 +1,16 @@
-body{
-    background-color:white;
-}
-
-nav {
-    position: absolute;
-    top: 24px;
-    left: 320px;
-    display: inline-block;
-}
-
+/* 
 p {
     color: #555151a1;
     margin-left: 55%;
     font-size: 20px;
     text-decoration: none;
-}
-a {
+} */
+/* a {
     color: #363434a1;
     margin-right: 25px;
     font-size: 20px;
     text-decoration: none;
-}
+} */
 
 .divider{
     height:.5;

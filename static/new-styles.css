@@ -4,14 +4,13 @@
 }
 /* edit form on right side of page */
 #container-right-side {
-    /* background-color: #797474; */
     background-image: linear-gradient(to right, #797474, #302c27);
     width: 500px;
     clear: both;
     padding-top: 8%;
     padding-left: 6%;
     padding-right: 6%; 
-    /* border-radius: 15px; */
+
 }
 #container-right-side input {
     width: 100%;

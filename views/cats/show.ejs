@@ -14,14 +14,24 @@
            <%- include ../partials/_navbar.ejs %>
     <div class="container">
      <img id="pic" src="../public/uploads/<%=cat.image%>">
-     <div id="data">
+        <div id="data">
           <h1 id="name"><%=cat.name%></h1>
           <div class="divider"></div>
           <h2>age: <%=cat.age%></h2>
           <h2>gender: <%=cat.gender%></h2>
           <h2><br><div class="divider"></div><%=cat.description%></h2>
-      </div>
-   </div>
+        </div>
+        <div>
+            <% if(cat.creator == currentUser && currentUser !== undefined) { %>
+                <form action="/cats/<%= cat._id %>/edit">
+                <input class="btn btn-outline-secondary btn-xs" type="submit" value="Edit <%=cat.name%>">
+                </form>
+                <form action="/cats/<%= cat._id%>?_method=DELETE" method="POST">
+                <input class="btn btn-outline-danger btn-xs" type="submit" value="Remove <%=cat.name%>">
+                </form>
+            <% } %>  
+        </div>      
+    </div>
    <img id="leftpaw" src="../images/paw-print-leftside.png" alt="left paw prints">
        <img id="rightpaw" src="../images/paw-print-rightside.png" alt="right paw prints">
   <%- include ../partials/_footer.ejs %>
