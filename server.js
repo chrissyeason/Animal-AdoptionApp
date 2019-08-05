@@ -59,7 +59,6 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
     console.log("the connection with mongodb is established")
  });
 
-
  app.use(session({
     secret: "SecretStuff",
     resave:false,
@@ -68,6 +67,11 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
 
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use((req, res, next)=>{
+    res.locals.currentUser = req.session.userId
+    console.log(res.locals.currentUser);
+    next();
+})
 app.use("/user", userController);
 app.use('/cats', catController);
 app.use('/dogs', dogController);
