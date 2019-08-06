@@ -1,3 +1,5 @@
+// use dotenv to import configs from the .env file
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path')
@@ -6,7 +8,10 @@ const fs = require('fs');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const mongoURI = 'mongodb://localhost:27017/'+'DogsAndCats';
+// Configuration
+const PORT = process.env.PORT
+const mongoURI = process.env.MONGODB_URI
+
 const userController = require('./controllers/userController.js')
 const catController = require('./controllers/catController.js')
 const dogController = require('./controllers/dogController.js')
@@ -55,15 +60,19 @@ function checktypeofFile(file,cb){
         }
 }
 
-mongoose.connect(mongoURI, { useNewUrlParser: true }, () =>{
-    console.log("the connection with mongodb is established")
- });
+// Database config and connection
+mongoose.connect(mongoURI, { useNewUrlParser: true })
+mongoose.connection.once('open', () => {
+  console.log('connected to mongo')
+})
 
- app.use(session({
-    secret: "SecretStuff",
-    resave:false,
-    saveUninitialized:false
-}))
+// configure sessions
+// secret is stored in .env
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+  }))
 
 app.use(methodOverride('_method')); //For put and Delete
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -79,6 +88,7 @@ app.use('/images', express.static('images'));
 app.use('/static', express.static('static'));
 app.use('/public/uploads', express.static('public/uploads')); //For Images users will upload
 
+// routes
 app.get('/', (req, res) =>{
     res.render('landing.ejs');
 })
@@ -87,13 +97,9 @@ app.get('/about', (req, res)=>{
     res.render('about.ejs')
 })
 
-app.listen(3000, ()=>{
-    console.log("The animal App is ready!!!");
-})
+app.listen(process.env.PORT, () => {
+    console.log('listening on port 3000');
+  })
 
-//Establish Connection with Mongo
-mongoose.connect(mongoURI,{useNewUrlParser:true});
-mongoose.connection.once("open",()=>{
-    console.log("Connected to Mongo")
-})
+
 
