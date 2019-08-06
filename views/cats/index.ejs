@@ -28,25 +28,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-            $(".catDropdown-content").css("display","none")
+$(".catDropdown-content").css("display","none")
             $(".dogDropdown-content").css("display","none")
             console.log($(".dropdown"))
 
-            $(".catDropdown").hover(function(){
-            console.log("Hover test")
+$(".catDiv").mouseover(function(){
+            console.log("Mouse on")
             $(".catDropdown-content").css("display","inline-block");
             $(".dogDropdown-content").css("display","none");
-            })
+})
 
-             $(".dogDropdown").hover(function(){
+$(".catDiv").mouseout(function(){
+            console.log("Mouse off")
+            $(".catDropdown-content").css("display","none");
+})
+
+$(".dogDiv").mouseover(function(){
+            console.log("Mouse on")
             $(".dogDropdown-content").css("display","inline-block");
             $(".catDropdown-content").css("display","none");
-            })
-            
-              $(".aboutDropdown").hover(function(){
-               $(".catDropdown-content").css("display","none");
-               $(".dogDropdown-content").css("display","none");
-            })
-              </script>
+})
+
+$(".dogDiv").mouseout(function(){
+            console.log("Mouse off")
+            $(".dogDropdown-content").css("display","none");
+})
+</script>
 </body>
 </html>
