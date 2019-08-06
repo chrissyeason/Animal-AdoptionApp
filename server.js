@@ -97,11 +97,9 @@ app.get('/about', (req, res)=>{
     res.render('about.ejs')
 })
 
-app.listen(PORT, () => console.log('auth happening on port', PORT))
+app.listen(process.env.PORT, () => {
+    console.log('listening on port 3000');
+  })
 
-//Establish Connection with Mongo
-mongoose.connect(mongoURI,{useNewUrlParser:true});
-mongoose.connection.once("open",()=>{
-    console.log("Connected to Mongo")
-})
+
 
