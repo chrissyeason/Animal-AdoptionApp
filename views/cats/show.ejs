@@ -16,10 +16,10 @@
      <img id="pic" src="../public/uploads/<%=cat.image%>">
      <div id="buttons">
       <form action="/cats/<%= cat._id %>/edit">
-          <input class="btn btn-outline-secondary btn-xs" type="submit" value="EDIT <%=cat.name%>">
+          <input class="edit" type="submit" value="EDIT <%=cat.name%>">
       </form>
       <form action="/cats/<%= cat._id%>?_method=DELETE" method="POST">
-          <input class="btn btn-outline-danger btn-xs" type="submit" value="DELETE <%=cat.name%>">
+          <input class="delete" type="submit" value="DELETE <%=cat.name%>">
       </form>  
      </div>
      
