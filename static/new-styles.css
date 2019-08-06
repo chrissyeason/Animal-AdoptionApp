@@ -63,9 +63,13 @@ select {
     padding: 2%;
 }
 #border {
-    height: 95%;
+    height: 100%;
     border: 2px solid white;
     margin: 0 auto;
+    overflow: hidden;
+}
+#border img {
+    max-width: 100%;
 }
 .btn {
     background-color: #ff9966;

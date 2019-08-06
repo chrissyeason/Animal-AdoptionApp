@@ -27,10 +27,10 @@
                 <h3><br><div class="divider"></div><%=oneDog.description%></h3>
             <% if(oneDog.creator == currentUser && currentUser !== undefined) { %>
                 <div id="buttons">
-                    <form action="/oneDogs/<%= oneDog._id %>/edit">
+                    <form action="/dogs/<%= oneDog._id %>/edit">
                     <input class="btn btn-outline-secondary btn-xs" type="submit" value="EDIT <%=oneDog.name%>">
                     </form>
-                    <form action="/oneDogs/<%= oneDog._id%>?_method=DELETE" method="POST">
+                    <form action="/dogs/<%= oneDog._id%>?_method=DELETE" method="POST">
                     <input class="btn btn-outline-danger btn-xs" type="submit" value="DELETE <%=oneDog.name%>">
                     </form>  
                 </div>
