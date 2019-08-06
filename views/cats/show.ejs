@@ -12,29 +12,34 @@
 </head>
 <body>
            <%- include ../partials/_navbar.ejs %>
-    <div class="container">
-     <img id="pic" src="../public/uploads/<%=cat.image%>">
-
-        <div id="data">
-          <h1 id="name"><%=cat.name%></h1>
-          <div class="divider"></div>
-          <h2>age: <%=cat.age%></h2>
-          <h2>gender: <%=cat.gender%></h2>
-          <h2><br><div class="divider"></div><%=cat.description%></h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <img id="pic" src="../public/uploads/<%=cat.image%>">
+            </div>
+            <div class="col-lg-6" id="data">
+                <h1 id="name"><%=cat.name%></h1>
+                <div class="divider"></div>
+                <h2>age: <%=cat.age%></h2>
+                <h2>gender: <%=cat.gender%></h2>
+                <div class="divider"></div>
+                <h3><%=cat.description%></h3>
+                <div>
+                <% if(cat.creator == currentUser && currentUser !== undefined) { %>
+                    <div id="buttons">
+                    <form action="/cats/<%= cat._id %>/edit">
+                    <input class="btn btn-outline-secondary btn-xs" type="submit" value="Edit <%=cat.name%>">
+                    </form><br>
+                    <form action="/cats/<%= cat._id%>?_method=DELETE" method="POST">
+                    <input class="btn btn-outline-danger btn-xs" type="submit" value="Remove <%=cat.name%>">
+                    </form>
+                    </div>
+                <% } %>
+                </div>  
+            </div>      
         </div>
-        <div>
-            <% if(cat.creator == currentUser && currentUser !== undefined) { %>
-                <form action="/cats/<%= cat._id %>/edit">
-                <input class="btn btn-outline-secondary btn-xs" type="submit" value="Edit <%=cat.name%>">
-                </form>
-                <form action="/cats/<%= cat._id%>?_method=DELETE" method="POST">
-                <input class="btn btn-outline-danger btn-xs" type="submit" value="Remove <%=cat.name%>">
-                </form>
-            <% } %>  
-        </div>      
-    </div>
-   <img id="leftpaw" src="../images/paw-print-leftside.png" alt="left paw prints">
-       <img id="rightpaw" src="../images/paw-print-rightside.png" alt="right paw prints">
+    </div>    
+    
   <%- include ../partials/_footer.ejs %>
 </body>
 </html>
