@@ -28,7 +28,7 @@ router.post('/', async(req, res) => {
     const dogImage = req.file.filename;
     console.log(dogImage);
     try{
-        const newDog = await Dog.create({ name: req.body.name, breed:req.body.breed, age: req.body.age, gender: req.body.gender,description: req.body.description, image: dogImage});
+        const newDog = await Dog.create({ name: req.body.name, breed:req.body.breed, age: req.body.age, gender: req.body.gender,description: req.body.description, image: dogImage, creator: res.locals.currentUser });
         res.redirect('/dogs'); 
     }
 catch(err){
