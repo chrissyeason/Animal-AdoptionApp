@@ -4,29 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your cat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/footer-styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/navbar-styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/new-styles.css">
+    <title>Edit Your Cat</title>
 </head>
 <body>
 <%- include ../partials/_navbar.ejs %>
-
-    <a href="/cats">back home</a>
-
+<div class="container">
     <form method="POST" action="/cats/<%=catId%>?_method=PUT" enctype="multipart/form-data">
-       <label for="name">name:</label>
-            <input type="text" value="<%=cat.name%>" name="name">
-        <label for="age">age:</label>
-            <input type="text" value="<%=cat.age%>" name="age">    
-        <select name="gender">
-            <option value="male">male</option>
-            <option value="female">female</option>
-        </select>
-        <label for="description">description:</label>
-            <textarea type="text" name="description"></textarea>
-         <label for="image">image:</label>  
-      <input type="file" name="image">
-        <input type="submit" value="update">   
-    </form>
+       <div class="row">
+                <div class="col-lg-6 col-sm-12" id="container-left-side">
+                    <div id="border" class="custom-file">
+                                <input  type="file" class="custom-file-input"  id="customFile" name="image"/>
+                                <img id="image_upload_preview"/>
+                                <label class="custom-file-label" for="image">Choose Image</label>
+                    </div>
+                </div>
 
+                <div class="col-lg-6 col-sm-12" id="container-right-side">
+                <h3>Let's update your cat!</h3>
+                    <label for="name">name:</label>
+                        <input type="text" placeholder="<%=cat.name%>" name="name">
+                    <label for="age">age:</label>
+                        <input type="text" placeholder="<%=cat.age%>" name="age">    
+                    <select name="gender">
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+                    <label for="description">description:</label>
+                        <textarea type="text" name="description" placeholder="<%=cat.description%>"></textarea>
+                    <input type="submit" value="update"> 
+                </div>  
+        </div>        
+    </form>
+</div>
 <%- include ../partials/_footer.ejs %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+<script>
+$(document).ready(function () {
+    bsCustomFileInput.init()
+    })
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#image_upload_preview').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#customFile").change(function () {
+    readURL(this);
+});    
+
+$(".catDropdown-content").css("display","none")
+        $(".dogDropdown-content").css("display","none")
+        console.log($(".dropdown"))
+
+$(".catDiv").mouseover(function(){
+            console.log("Mouse on")
+            $(".catDropdown-content").css("display","inline-block");
+            $(".dogDropdown-content").css("display","none");
+})
+
+$(".catDiv").mouseout(function(){
+            console.log("Mouse off")
+            $(".catDropdown-content").css("display","none");
+})
+
+$(".dogDiv").mouseover(function(){
+            console.log("Mouse on")
+            $(".dogDropdown-content").css("display","inline-block");
+            $(".catDropdown-content").css("display","none");
+})
+
+$(".dogDiv").mouseout(function(){
+            console.log("Mouse off")
+            $(".dogDropdown-content").css("display","none");
+})
+    </script>    
 </body>
 </html>
