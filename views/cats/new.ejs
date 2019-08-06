@@ -17,7 +17,8 @@
         <div class="row">
                 <div class="col-lg-6 col-sm-12" id="container-left-side">
                     <div id="border" class="custom-file">
-                            <input  type="file" class="custom-file-input"  id="customFile" name="image">
+                            <input  type="file" class="custom-file-input"  id="customFile" name="image"/>
+                            <img id="image_upload_preview"/>
                             <label class="custom-file-label" for="image">Choose Image</label>
                     </div>    
                 </div>
@@ -28,9 +29,9 @@
                         <input id="age-input" type="text" name="age" placeholder="age">  
                         <label for="gender">gender:</label>
                         <select name="gender">
-                        <option value="male">male</option>
-                        <option value="female">female</option>
-                    </select>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                        </select>
                     <br>
                     <label for="description">description:</label>
                         <textarea type="text" name="description"></textarea><br>
@@ -47,6 +48,22 @@
     $(document).ready(function () {
         bsCustomFileInput.init()
         })
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#customFile").change(function () {
+        readURL(this);
+    });
     </script>    
+    <%-include ../partials/_footer.ejs %>
 </body>
 </html>
