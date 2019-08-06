@@ -50,7 +50,7 @@ router.post('/login', async (req, res)=>{
                 res.redirect('/about')
                 console.log(userFromDb)
             }else{
-                res.send("not valid password")
+                res.send('<a href="/">wrong password</a>')
             }
     }catch(err){
         res.send(err)
