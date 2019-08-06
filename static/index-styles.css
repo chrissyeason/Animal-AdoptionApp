@@ -8,12 +8,13 @@
 z-index: 1;
 width: 300px;
 height:300px;
-margin-bottom: 15px;
+margin-bottom: 3%;
 border-radius: 4px;
-
+}
+#image-block {
+  margin-bottom: 2%;
 }
 .divider{
-  height: .5;
   border: solid #ff9966 1px;
   width: 300px;
 }
@@ -22,7 +23,7 @@ a.imageName{
   font-size:1.5vw;
 }
 a.imageName:hover{
-  color: #fdb0a1;
+  color: #ff9966;
   text-decoration: none;
 }
 
