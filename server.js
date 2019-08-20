@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 // Configuration
 const PORT = process.env.PORT
-const mongoURI = process.env.MONGODB_URI
+const mongoURI = process.env.MONGOLAB_URI
 
 const userController = require('./controllers/userController.js')
 const catController = require('./controllers/catController.js')
